@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from flask_restful import Api
 import requests
 
@@ -11,9 +11,10 @@ api = Api(app)
 
 api.add_resource(ProductList, "/api/content/<content>")
 api.add_resource(ContentList, "/api/contents")
+api.add_resource(ContentURL, "/api/upload-url")
 
 
-@app.route('/second', )
+@app.route('/second')
 def render_second():
     res = requests.get(url=f"http://localhost:{PORT | 5000}/api/contents")
     content_types = res.json()

@@ -2,11 +2,11 @@ from db.connect import init
 
 
 def fetch_data():
-    db, cursor = init()
-
     query_str = '''
     SELECT * FROM products
     '''
+
+    db, cursor = init()
 
     rows = list(cursor.execute(query_str))
     db.close()

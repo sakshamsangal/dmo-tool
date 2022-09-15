@@ -6,8 +6,8 @@ create tables to store.
 
 task 1
 api 1
-endpoint: /ct/<deskbook>
-endpoint: /ct/<sl>
+endpoint: /content/deskbook
+endpoint: /content/<:content>
 
 output:
 {
@@ -20,9 +20,9 @@ output:
 
 task 2
 api 2
-endpoint: /cts
+endpoint: /contents
 {
-   "ct": ["deskbook", "std legal"]
+   "contents": ["deskbook", "std legal"]
 }
 
 task 3
