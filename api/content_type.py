@@ -13,7 +13,10 @@ class ProductList(Resource):
         return query.get_product_names(content)
 
 
-class ContentURL(Resource):
+class ProductURL(Resource):
+    def get(self, product_name):
+        return query.get_urls(product_name)
+
     def post(self):
         product_name = request.json.get('product_name')
         links = request.json

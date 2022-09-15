@@ -15,7 +15,10 @@ def fetch_data():
                    {
                        'content_type': product[0].strip().upper(),
                        'product_name': product[1].strip().upper(),
-                       'product_group': product[2].strip().upper()
+                       'product_group': product[2].strip().upper(),
+                       'xml_url': product[3].strip().lower(),
+                       'pdf_url': product[4].strip().lower(),
+                       'online_url': product[5].strip().lower()
                    }, rows)
     return list(products)
 
@@ -35,3 +38,17 @@ def get_content_names():
     for product in products:
         content_names.add(product['content_type'])
     return list(content_names)
+
+
+def get_urls(product_name):
+    products = fetch_data()
+    for product in products:
+        if product['product_name'] == product_name.strip().upper():
+            urls = {
+                'xml_url': product.get('xml_url', ''),
+                'pdf_url': product.get('pdf_url', ''),
+                'online_url': product.get('online_url', '')
+            }
+            return urls
+    return {}
+        
