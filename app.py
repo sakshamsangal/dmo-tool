@@ -21,7 +21,7 @@ def handle_error(e):
 
 api.add_resource(ProductList, "/api/content/<content>")
 api.add_resource(ContentList, "/api/contents")
-api.add_resource(ProductURL, "/api/upload-url", "/api/fetch-url/<product_name>")
+api.add_resource(ProductURL, "/api/upload-url", "/api/fetch-urls/<product_name>")
 
 
 @app.route('/')
