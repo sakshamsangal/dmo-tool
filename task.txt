@@ -1,29 +1,32 @@
-software: postman, DB browser (SQLite), pycharm
+software: postman, DB browser (SQLite), IDE
 
-task 0
+**task 0 - completed**
 create db 
 create tables to store.
 
-task 1
+**task 1 - completed**
 api 1
-endpoint: /ct/<deskbook>
-endpoint: /ct/<sl>
+endpoint: /content/deskbook
+endpoint: /content/<content>
 
 output:
-{
-   "products": ["65", "990"]
-}
+["ppct65", "ppc990"]
+["ch11", "cdel"]
 
-{
-   "products": ["ch11", "cdel"]
-}
-
-task 2
+**task 2 - completed**
 api 2
-endpoint: /cts
-{
-   "ct": ["deskbook", "std legal"]
-}
+endpoint: /contents
 
-task 3
+output:
+["deskbook", "legal us"]
+
+**task 3 - completed**
 dynamic display of data
+
+**task 4 - completed**
+api 3 (POST)
+endpoint: /upload-url
+
+**task 5 - completed**
+api 4
+endpoint: /fetch-url
