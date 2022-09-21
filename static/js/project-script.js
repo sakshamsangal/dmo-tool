@@ -38,6 +38,29 @@ function fetchAndShowUrls(productName) {
     });
 }
 
+function onViewMastersheet() {
+  let productName = document.querySelector("#product").value;
+  // hit API to get the mastersheet open on view mode
+  console.log("onViewMastersheet triggered", productName);
+}
+
+function onEditMastersheet() {
+  let productName = document.querySelector("#product").value;
+  // hit API to get the mastersheet open on edit mode
+  console.log("onEditMastersheet triggered", productName);
+}
+function onViewAttrsheet() {
+  let productName = document.querySelector("#product").value;
+  // hit API to get the mastersheet open on view mode
+  console.log("onViewAttrsheet triggered", productName);
+}
+
+function onEditAttrsheet() {
+  let productName = document.querySelector("#product").value;
+  // hit API to get the mastersheet open on edit mode
+  console.log("onEditAttrsheet triggered", productName);
+}
+
 function uploadUrl(type, url) {
   let sendObj = {};
   product_name = document.querySelector("#product").value;
@@ -57,7 +80,6 @@ function uploadUrl(type, url) {
     .catch((err) => {
       console.error(err);
     });
-  //    console.log({type: url});
 }
 
 var contentSelect = document.querySelector("#content-type");

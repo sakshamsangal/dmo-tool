@@ -25,15 +25,30 @@ api.add_resource(ProductURL, "/api/upload-url", "/api/fetch-urls/<product_name>"
 
 
 @app.route('/')
-def render_home():
+def render_home_page():
     return render_template('index.html')
 
 
-@app.route('/second')
-def render_second():
+@app.route('/project')
+def render_project_page():
     res = requests.get(url=f"http://localhost:{PORT | 5000}/api/contents")
     content_types = res.json()
-    return render_template('second.html', content_types=content_types, PORT=PORT)
+    return render_template('project.html', content_types=content_types, PORT=PORT)
+
+
+@app.route('/model')
+def render_model_page():
+    return render_template('model.html', PORT=PORT)
+
+
+@app.route('/script')
+def render_script_page():
+    return render_template('script.html', PORT=PORT)
+
+
+@app.route('/admin')
+def render_admin_page():
+    return render_template('admin.html', PORT=PORT)
 
 
 if __name__ == "__main__":
